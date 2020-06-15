@@ -10,9 +10,11 @@
       <false />
     </dict>
     <key>ThrottleInterval</key>
-    <integer>180</integer>
+    <integer>10800</integer>
     <key>StartCalendarInterval</key>
     <dict>
+      <key>Minute</key>
+      <integer>0</integer>
     </dict>
     <key>ProgramArguments</key>
     <array>
