@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>Label</key>
+    <string>com.oscardub.skvint</string>
+    <key>KeepAlive</key>
+    <dict>
+      <key>SuccessfulExit</key>
+      <false />
+    </dict>
+    <key>ThrottleInterval</key>
+    <integer>180</integer>
+    <key>StartCalendarInterval</key>
+    <dict>
+    </dict>
+    <key>ProgramArguments</key>
+    <array>
+      <string>/usr/local/bin/skvint</string>
+    </array>
+    <key>StandardOutPath</key>
+    <string>/usr/local/var/skvint/output.log</string>
+    <key>StandardErrorPath</key>
+    <string>/usr/local/var/skvint/error.log</string>
+  </dict>
+</plist>
