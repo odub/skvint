@@ -1,8 +1,11 @@
+.PHONY: all
 all: deps
 
+.PHONY: clean
 clean:
 	rm -rf ./packages/*
 
+.PHONY: deps
 deps: packages/brightness packages/sunwait packages/coreutils
 
 packages/brightness:
@@ -19,12 +22,14 @@ packages/sunwait:
 packages/coreutils:
 	brew list coreutils &>/dev/null || brew install coreutils
 
+.PHONY: install
 install:
 	ln -sf $$PWD/skvint /usr/local/bin
 	mkdir -p /usr/local/var/skvint/
 	cp -f ./com.oscardub.skvint.plist ~/Library/LaunchAgents/
 	launchctl load -w ~/Library/LaunchAgents/com.oscardub.skvint.plist
 
+.PHONY: uninstall
 uninstall:
 	unlink /usr/local/bin/skvint
 	launchctl unload -w ~/Library/LaunchAgents/com.oscardub.skvint.plist
