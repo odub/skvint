@@ -10,7 +10,7 @@
       <false />
     </dict>
     <key>ThrottleInterval</key>
-    <integer>10800</integer>
+    <integer>10</integer>
     <key>StartCalendarInterval</key>
     <dict>
       <key>Minute</key>
