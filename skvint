@@ -17,7 +17,7 @@ if [ $DAYLIGHT_CODE == 2 ]; then
 elif [ $DAYLIGHT_CODE == 3 ]; then
   # night
   MODE="night"
-  BRIGHTNESS=0.5
+  BRIGHTNESS=0.55
 fi
 
 $DIR/packages/brightness/brightness $BRIGHTNESS
