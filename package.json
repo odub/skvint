@@ -1,0 +1,22 @@
+{
+  "name": "skvint",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/odub/skvint.git"
+  },
+  "author": "Oscar Dub <oscardub@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/odub/skvint/issues"
+  },
+  "homepage": "https://github.com/odub/skvint#readme",
+  "dependencies": {
+    "controlling_ikea_tradfri_with_node": "git+https://github.com/wschenk/tradfri-cli.git"
+  }
+}

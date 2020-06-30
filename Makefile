@@ -6,7 +6,7 @@ clean:
 	rm -rf ./packages/*
 
 .PHONY: deps
-deps: packages/brightness packages/sunwait packages/coreutils
+deps: packages/brightness packages/sunwait packages/coreutils packages/npm
 
 packages/brightness:
 	mkdir -p ./packages/brightness
@@ -21,6 +21,10 @@ packages/sunwait:
 .PHONY: packages/coreutils
 packages/coreutils:
 	brew list coreutils &>/dev/null || brew install coreutils
+
+.PHONY: packages/npm
+package/npm:
+	npm install
 
 .PHONY: install
 install:

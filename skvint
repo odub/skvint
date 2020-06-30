@@ -6,20 +6,24 @@ LATLONG="51.5074N 0.1278W"
 LAT=$(echo $LATLONG | cut -d' ' -f1)
 LONG=$(echo $LATLONG | cut -d' ' -f2)
 
-
 $DIR/packages/sunwait/sunwait poll $LAT $LONG
 DAYLIGHT_CODE=$?
+COLOR=f1e0b5
 
 if [ $DAYLIGHT_CODE == 2 ]; then
   # day
   MODE="day"
   BRIGHTNESS=0.8
+  BULB_BRIGHTNESS=100
 elif [ $DAYLIGHT_CODE == 3 ]; then
   # night
   MODE="night"
   BRIGHTNESS=0.55
+  BULB_BRIGHTNESS=30
 fi
 
 $DIR/packages/brightness/brightness $BRIGHTNESS
 
-echo "$(date +%Y-%m-%dT%H:%M:%SZ%z) $BRIGHTNESS $MODE"
+node $DIR/node_modules/controlling_ikea_tradfri_with_node/device_changer.js 65540 --color $COLOR --brightness $BULB_BRIGHTNESS > /dev/null
+
+echo "$(date +%Y-%m-%dT%H:%M:%SZ%z) $MODE $BRIGHTNESS $BULB_BRIGHTNESS"
