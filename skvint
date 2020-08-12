@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DIR=$(dirname $(/usr/local/bin/realpath $0))
+DIR=$(dirname $(realpath $0))
 
 LATLONG="51.5074N 0.1278W"
 LAT=$(echo $LATLONG | cut -d' ' -f1)
@@ -15,15 +15,17 @@ if [ $DAYLIGHT_CODE == 2 ]; then
   MODE="day"
   BRIGHTNESS=0.8
   BULB_BRIGHTNESS=100
+  POSITION=0
 elif [ $DAYLIGHT_CODE == 3 ]; then
   # night
   MODE="night"
   BRIGHTNESS=0.55
   BULB_BRIGHTNESS=30
+  POSITION=100
+  node $DIR/node_modules/controlling_ikea_tradfri_with_node/device_changer.js 65555 --position $POSITION
 fi
 
-$DIR/packages/brightness/brightness $BRIGHTNESS
-
+node $DIR/node_modules/controlling_ikea_tradfri_with_node/devices.js
 node $DIR/node_modules/controlling_ikea_tradfri_with_node/device_changer.js 65540 --color $COLOR --brightness $BULB_BRIGHTNESS > /dev/null
 
-echo "$(date +%Y-%m-%dT%H:%M:%SZ%z) $MODE $BRIGHTNESS $BULB_BRIGHTNESS"
+echo "$(date +%Y-%m-%dT%H:%M:%SZ%z) $MODE $BRIGHTNESS $BULB_BRIGHTNESS $POSITION"

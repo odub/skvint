@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/odub/skvint#readme",
   "dependencies": {
-    "controlling_ikea_tradfri_with_node": "git+https://github.com/wschenk/tradfri-cli.git"
+    "controlling_ikea_tradfri_with_node": "git+https://github.com/odub/tradfri-cli.git"
   }
 }

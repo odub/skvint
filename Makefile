@@ -6,21 +6,21 @@ clean:
 	rm -rf ./packages/*
 
 .PHONY: deps
-deps: packages/brightness packages/sunwait packages/coreutils packages/npm
+deps: packages
 
-packages/brightness:
-	mkdir -p ./packages/brightness
-	git clone https://github.com/nriley/brightness.git ./packages/brightness
-	make -C ./packages/brightness
+# packages/brightness:
+# 	mkdir -p ./packages/brightness
+# 	git clone https://github.com/nriley/brightness.git ./packages/brightness
+# 	make -C ./packages/brightness
 
 packages/sunwait:
 	mkdir -p ./packages/sunwait
 	git clone https://github.com/RalphBln/sunwait-multiplatform ./packages/sunwait
 	make -C ./packages/sunwait
 
-.PHONY: packages/coreutils
-packages/coreutils:
-	brew list coreutils &>/dev/null || brew install coreutils
+# .PHONY: packages/coreutils
+# packages/coreutils:
+# apt-get install core-utils
 
 .PHONY: packages/npm
 package/npm:
